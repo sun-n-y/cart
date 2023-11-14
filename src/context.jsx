@@ -8,12 +8,13 @@ import {
   LOADING,
   DISPLAY_ITEMS,
 } from './actions';
+import cartItems from './data';
 
 const AppContext = createContext();
 
 const initialState = {
   loading: false,
-  cart: [],
+  cart: new Map(cartItems.map((item) => [item.id, item])),
 };
 
 export const AppProvider = ({ children }) => {
